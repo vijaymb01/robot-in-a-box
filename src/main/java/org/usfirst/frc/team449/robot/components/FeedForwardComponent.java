@@ -26,11 +26,11 @@ public abstract class FeedForwardComponent implements DoubleUnaryOperator{
     }
 
     /**
-     * Calculate the voltage for a setpoint in MP mode with
-     * @param positionSetpoint
-     * @param velSetpoint
-     * @param accelSetpoint
-     * @return
+     * Calculate the voltage for a setpoint in MP mode with a position, velocity, and acceleration setpoint.
+     * @param positionSetpoint The desired position, in feet.
+     * @param velSetpoint The desired velocity, in feet/sec.
+     * @param accelSetpoint The desired acceleration, in feet/sec^2.
+     * @return The voltage, from 0-12, needed to achieve that velocity and acceleration.
      */
     public abstract double calcMPVoltage(double positionSetpoint, double velSetpoint, double accelSetpoint);
 
