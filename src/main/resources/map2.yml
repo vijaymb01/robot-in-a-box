@@ -97,7 +97,7 @@ buttons:
                         subsystem:
                             org.usfirst.frc.team449.robot.subsystem.interfaces.Position.SubsystemPositionSimple:
                                 positionSimple3
-            action: WHEN_RELEASED
+            action: WHEN_PRESSED
         -   button:
                 org.usfirst.frc.team449.robot.oi.buttons.SimpleButton:
                     button4
@@ -107,7 +107,7 @@ buttons:
                     subsystem:
                         org.usfirst.frc.team449.robot.subsystem.interfaces.Position.SubsystemPositionSimple:
                             positionSimple4
-            action: WHEN_RELEASED
+            action: WHEN_PRESSED
 defaultCommands:
     - subsystem:
         org.usfirst.frc.team449.robot.subsystem.interfaces.analogMotor.AnalogMotorSimple:
