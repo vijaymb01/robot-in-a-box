@@ -72,12 +72,42 @@ buttons:
             org.usfirst.frc.team449.robot.oi.buttons.SimpleButton:
                 button1
         command:
-            org.usfirst.frc.team449.robot.subsystem.interfaces.solenoid.commands.SolenoidReverse:
-                '@id': retract4
+            org.usfirst.frc.team449.robot.subsystem.interfaces.Position.commands.EnableMotor:
+                '@id': enable1
                 subsystem:
-                    org.usfirst.frc.team449.robot.subsystem.interfaces.solenoid.SolenoidSimple:
-                        solenoidSubsystem4
-        action: WHEN_RELEASED
+                    org.usfirst.frc.team449.robot.subsystem.interfaces.Position.SubsystemPositionSimple:
+                        positionSimple1
+        action: WHEN_PRESSED
+    -   button:
+            org.usfirst.frc.team449.robot.oi.buttons.SimpleButton:
+                button2
+        command:
+            org.usfirst.frc.team449.robot.subsystem.interfaces.Position.commands.DisableMotor:
+                '@id': disable2
+                subsystem:
+                    org.usfirst.frc.team449.robot.subsystem.interfaces.Position.SubsystemPositionSimple:
+                        positionSimple2
+            action: WHEN_RELEASED
+        -   button:
+                    org.usfirst.frc.team449.robot.oi.buttons.SimpleButton:
+                        button3
+                command:
+                    org.usfirst.frc.team449.robot.subsystem.interfaces.Position.commands.Home:
+                        '@id': home3
+                        subsystem:
+                            org.usfirst.frc.team449.robot.subsystem.interfaces.Position.SubsystemPositionSimple:
+                                positionSimple3
+            action: WHEN_RELEASED
+        -   button:
+                org.usfirst.frc.team449.robot.oi.buttons.SimpleButton:
+                    button4
+            command:
+                org.usfirst.frc.team449.robot.subsystem.interfaces.Position.commands.SetPosition:
+                    '@id': setPosition4
+                    subsystem:
+                        org.usfirst.frc.team449.robot.subsystem.interfaces.Position.SubsystemPositionSimple:
+                            positionSimple4
+            action: WHEN_RELEASED
 defaultCommands:
     - subsystem:
         org.usfirst.frc.team449.robot.subsystem.interfaces.analogMotor.AnalogMotorSimple:
@@ -123,12 +153,6 @@ defaultCommands:
                     deadband: 0.05
                     smoothingTimeSecs: 0.04
                     inverted: true
-startupCommand:
-    org.usfirst.frc.team449.robot.subsystem.singleImplementation.pneumatics.commands.StartCompressor:
-        '@id': startCompressor
-        subsystem:
-            org.usfirst.frc.team449.robot.subsystem.singleImplementation.pneumatics.Pneumatics:
-                pneumatics
 updater:
     org.usfirst.frc.team449.robot.other.Updater:
         '@id': updater
